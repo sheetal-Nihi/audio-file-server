@@ -89,5 +89,5 @@ def update(type,ID,data):
         response= {'error':'500 internal server error'}
     finally:
         con.close()
-    return json.dumps(result)
+    return json.dumps(response)
     
