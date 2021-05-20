@@ -1,7 +1,6 @@
 '''
     The CRUD Operations of Database
 '''
-from flask.wrappers import Response
 import pymysql
 from datetime import date
 import json
