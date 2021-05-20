@@ -1,5 +1,6 @@
 '''
-    The CRUD Operations of Database
+    Base logic of Database operations.
+    Gerneric code for any king of Audio file Types
 '''
 import pymysql
 from datetime import date

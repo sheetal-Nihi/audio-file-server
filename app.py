@@ -1,3 +1,6 @@
+'''
+   Main Flask logic with four routs Insert, Get, Update and Delete
+'''
 from flask import Flask,request
 import db_operations as db
 import json
