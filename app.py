@@ -11,17 +11,21 @@ app = Flask(__name__)
 def insert():
     audioFileType= request.form['audioFileType']
     audioFileMetadata= json.loads(request.form['meta'])
-    return db.insert(audioFileType,audioFileMetadata)
+    db_op=db.db_operstion()
+    return db_op.insert(audioFileType,audioFileMetadata)
 
 @app.route('/<audioFileType>/<audioFileID>',methods=['GET'])
 def get(audioFileType,audioFileID):
-    return db.get(audioFileType,audioFileID)
+    db_op=db.db_operstion()
+    return db_op.get(audioFileType,audioFileID)
 
 @app.route('/update/<audioFileType>/<audioFileID>',methods=['POST'])
 def update(audioFileType,audioFileID):
     metaData=json.loads(request.form['meta'])
-    return db.update(audioFileType,audioFileID,metaData)
+    db_op=db.db_operstion()
+    return db_op.update(audioFileType,audioFileID,metaData)
 
 @app.route('/delete/<audioFileType>/<audioFileID>',methods=['GET'])
 def delete(audioFileType,audioFileID):
-    return db.delete(audioFileType,audioFileID)
+    db_op=db.db_operstion()
+    return db_op.delete(audioFileType,audioFileID)
